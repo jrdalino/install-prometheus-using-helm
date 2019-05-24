@@ -1,8 +1,8 @@
 # Install Prometheus Using Helm
 
-## Step 9: Deploy Prometheus for basic monitoring
+## Step 1: Deploy Prometheus for basic monitoring
 
-### Step 9.1: Install Prometheus
+### Step 1.1: Install Prometheus
 ```
 $ kubectl create namespace prometheus
 $ helm install stable/prometheus \
@@ -12,12 +12,12 @@ $ helm install stable/prometheus \
     --set server.persistentVolume.storageClass="gp2"
 ```
 
-### Step 9.2: Check if Prometheus components deployed as expected
+### Step 1.2: Check if Prometheus components deployed as expected
 ```
 $ kubectl get all -n prometheus
 ```
 
-### Step 9.3: Access the Prometheus server URL w/ kubectl port-forward and access /targets Web UI
+### Step 1.3: Access the Prometheus server URL w/ kubectl port-forward and access /targets Web UI
 ```
 $ kubectl port-forward -n prometheus deploy/prometheus-server 8080:9090
 ```
